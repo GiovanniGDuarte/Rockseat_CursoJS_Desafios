@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Ola</title>
+</head>
+<body>
+    <div id="app">
+        <ul></ul>
+        <input type="text" name="nome">
+        <button onClick="adicionar()">Adicionar</button>
+    </div>
+
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+        var listElement = document.querySelector('ul');
+
+        nomes.forEach(nome => {
+            var liElement = document.createElement('li');
+            var liContent = document.createTextNode(nome);
+
+            liElement.appendChild(liContent);
+            listElement.appendChild(liElement);
+        });
+
+        function adicionar(){
+            var input = document.querySelector('input');
+            var conteudo = input.value;
+
+            var liElement = document.createElement('li');
+            var liContent = document.createTextNode(conteudo);
+
+            liElement.appendChild(liContent);
+            listElement.appendChild(liElement);
+            input.value = '';
+        }
+
+
+            
+            
+
+
+
+
+    </script>
+    
+</body>
+</html>

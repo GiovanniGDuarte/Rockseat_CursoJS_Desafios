@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+</head>
+<body>
+    <div id="app">
+        <button class="btn">Push</button>
+    </div>
+    
+    <script>
+        var button = document.querySelector(".btn");
+        var div = document.querySelector("#app");
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+                return color;
+        }
+        var newColor = getRandomColor();
+
+        
+        button.onclick = function(){
+            var novaDiv = document.createElement("div");
+
+            novaDiv.style.height = "100px";
+            novaDiv.style.width = "100%";
+            novaDiv.style.backgroundColor = "red";
+
+            novaDiv.onmouseover = function(){
+                novaDiv.style.backgroundColor = getRandomColor();
+            }
+
+            div.appendChild(novaDiv)
+        }    
+        
+    </script>
+</body>
+</html>
